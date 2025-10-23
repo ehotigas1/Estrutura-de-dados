@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define SIZE 11
+#define SIZE 5
 
 typedef struct{
 
@@ -33,6 +33,7 @@ void enfileirar(Fila *fila, char valor){
     if(isFull(fila)) return;
     fila->data[fila->tail] = valor;
     fila->tail = (fila->tail + 1) % SIZE;
+    printf("%d ", fila->tail);
     fila->qtde++;
 
 }
@@ -47,13 +48,11 @@ int main(){
     printf("fila estatica\n");
     Fila fila;
     inicializa(&fila);
-    enfileirar(&fila, 'a');
-    enfileirar(&fila, 'b');
-    enfileirar(&fila, 'c');
-    enfileirar(&fila, 'd');
-    desenfileirar(&fila);
-    desenfileirar(&fila);
-    enfileirar(&fila, 'e');
+    enfileirar(&fila, '1');
+    enfileirar(&fila, '2');
+    enfileirar(&fila, '3');
+    enfileirar(&fila, '4');
+    enfileirar(&fila, '5');
     imprimir(&fila);
     return 0;
 }
